@@ -1,0 +1,181 @@
+/* Temel yapı */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Ana uygulama */
+.App {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Viewport container (3D sahneler) */
+#view-container {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+}
+
+/* Her bir sahne görünümü */
+.viewport {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.viewport canvas,
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Kontrol paneli */
+#control-panel {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Kontrol alanları */
+.control-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.control-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.control-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #333;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Grid düzenli buton grubu */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+.button-grid button {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #555;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  opacity: 50%;
+  align-items: center;
+  justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+.button-grid button:hover {
+  border-color: #5e5f60;
+  color: #5e5f60;
+}
+
+.button-grid button.active {
+  background-color: #f9f9f9;
+  color: #555;
+  font-weight: bold;
+  border-color:#5e5f60;
+  opacity: 100%;
+;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+.button-grid button img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  object-fit: contain;
+  opacity: 100%;
+}
+
+/* Metal seçim butonları (yuvarlak) */
+.metal-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  background-color: #eee;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.metal-btn:hover {
+  transform: scale(1.05);
+}
+
+.metal-btn.active {
+  border-color: #007bff;
+  transform: scale(1.1);
+}
+
+/* Yüzük ölçüsü seçici */
+.ring-size-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ring-size-select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+/* Satın al butonu */
+#buy-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#buy-btn:hover {
+  background-color: #218838;
+}
+
+/* Gizli öğeler */
+.hidden {
+  display: none !important;
+}

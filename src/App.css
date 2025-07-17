@@ -1,0 +1,52 @@
+/* Genel body düzeni */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ana uygulama */
+.App {
+  display: flex;
+  height: 100%;
+}
+
+/* Viewport grid container */
+#view-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+  grid-template-rows: repeat(2, 1fr);    /* 2 satır */
+  gap: 0.5rem;
+  width: 75%;
+  height: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Her bir viewport */
+.viewport {
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Kontrol paneli (isteğe bağlı) */
+#control-panel {
+  width: 25%;
+  background: #f9f9f9;
+  padding: 1rem;
+  overflow-y: auto;
+  border-left: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Canvas (Three.js sahnesi için) */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
